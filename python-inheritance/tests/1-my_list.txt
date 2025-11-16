@@ -1,0 +1,42 @@
+===========================
+ The  ``1. my_list`` module
+===========================
+
+Usage
+=====
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> my_list = MyList()
+>>> isinstance(my_list, list)
+True
+
+>>> my_list = MyList()
+>>> type(my_list) == MyList
+True
+
+>>> my_list = MyList([3, 1, 4, 2])
+>>> my_list.print_sorted()
+[1, 2, 3, 4]
+
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+>>> my_list = MyList([-9, -12, 1])
+>>> my_list.print_sorted()
+[-12, -9, 1]
+
+>>> my_list = MyList([1, 4, 7, 5, 2])
+>>> my_list.print_sorted()
+[1, 2, 4, 5, 7]
+>>> print(my_list)
+[1, 4, 7, 5, 2]
+
+
+>>> type(MyList.__dict__['print_sorted'])
+<class 'function'>
