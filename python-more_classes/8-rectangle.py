@@ -5,14 +5,10 @@
 class Rectangle:
     """Represents a rectangle."""
 
-    number_of_instances = 0
-    print_symbol = "#"
-
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle."""
         self.width = width
         self.height = height
-        Rectangle.number_of_instances += 1
 
     def area(self):
         """Return the rectangle area."""
@@ -51,22 +47,3 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
-
-    def __repr__(self):
-        """Return a string representation of the rectangle
-        to be able to recreate a new instance using eval().
-        """
-        return f"Rectangle({self.width}, {self.height})"
-
-    def __del__(self):
-        """Print a message when an instance is deleted."""
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
-
-    def __str__(self):
-        """Return the rectangle with the character #."""
-        lines = []
-        for _ in range(self.height):
-            line = str(self.print_symbol) * self.width
-            lines.append(line)
-        return "\n".join(lines)
